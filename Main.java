@@ -17,7 +17,7 @@ public class Main {
 		
 		//Build board and robot
 		BoardBuild bb = new BoardBuild(x, y);
-		Robot rob = new Robot(fpX , fpY , fpArr[2]);
+		Robot rob = new Robot(fpX , fpY , fpArr[2], bb);
 		
 		//movement directions
 		String movement = "LGGRGRGRGG";

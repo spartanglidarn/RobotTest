@@ -1,6 +1,6 @@
 
 public class Robot {
-	
+	//dir 
 	// 1 = north
 	// 2 = east
 	// 3 = south
@@ -8,9 +8,14 @@ public class Robot {
 	private int dir = 0;
 	private int posX = 0;
 	private int posY = 0;
+	private BoardBuild board = new BoardBuild(0, 0);
 	
 	
-	public Robot (int posX, int posY, String dir) {
+	public Robot (int posX, int posY, String dir, BoardBuild bb) {
+		//Set the board for this instance of robot
+		this.board = bb;
+		System.out.println("BB X size. " + bb.getXAxis());
+		System.out.println("BB Y size. " + bb.getYAxis());
 		
 		switch(dir.toLowerCase()){
 		case "n":
@@ -32,6 +37,10 @@ public class Robot {
 		
 		this.setPosX(posX);
 		this.setPosY(posY);
+		
+		
+		
+	
 	}
 	
 	//Direction L will subtract from the direction and R will add to the Direction
@@ -84,7 +93,14 @@ public class Robot {
 	}
 	
 	public void setPosX(int posX){
-		this.posX = posX;
+		//check if the move is within the board
+		if (posX < 1) {
+			System.out.println("Move invalid, robot would end up outside of board on position: " + this.getPosX() + " on the x-axis");
+		} else if (posX > this.board.getXAxis()){
+			System.out.println("2Move invalid, robot would end up outside of board on position: " + this.getPosX() + " on the x-axis");
+		} else {
+			this.posX = posX;
+		}
 	}
 	
 	public int getPosY(){
@@ -92,7 +108,14 @@ public class Robot {
 	}
 	
 	public void setPosY(int posY){
-		this.posY = posY;
+		//check if the move is within the board
+		if (posY < 1) {
+			System.out.println("Move invalid, robot would end up outside of board on position: " + this.getPosY() + " on the y-axis");
+		} else if (posY > this.board.getYAxis()){
+			System.out.println("2Move invalid, robot would end up outside of board on position: " + this.getPosY() + " on the y-axis");
+		} else {
+			this.posY = posY;
+		}
 	}
 	
 	public int getDir() {

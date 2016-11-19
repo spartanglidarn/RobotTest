@@ -5,8 +5,8 @@ public class BoardBuild {
 	private int yAxis;
 	
 	public BoardBuild (int x, int y) {
-		xAxis = x;
-		yAxis = y;
+		this.setXAxis(x);
+		this.setYAxis(y);
 		
 		this.xy = new String [x][y];
 		
