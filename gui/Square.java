@@ -1,16 +1,19 @@
 package gui;
 
-import java.awt.Rectangle;
+import java.awt.Color;
+import java.awt.Dimension;
 
-import javax.swing.JPanel;
-import gui.Frame;
+import javax.swing.BorderFactory;
+import javax.swing.JLabel;
 
-public class Square extends JPanel{
+public class Square extends JLabel{
 	
-	public static Rectangle addSquare(){
-		Rectangle rect = new Rectangle(10, 10, 20, 20);
-		return rect;
-		//Frame.add(rect);
+	public Square(Color col){
+		setPreferredSize(new Dimension(50, 50));
+		setVisible(true);
+		setOpaque(true);
+		setBackground(col);
+		setBorder(BorderFactory.createLineBorder(Color.black));
 	}
 
 }

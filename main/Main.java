@@ -6,9 +6,10 @@ import robot.Robot;
 public class Main {
 
 	public static void main(String[] args) {
-		Frame gui = new Frame("testing");
+		
+		boolean alive = true;
 		//Take in the size of the matrix from the user and convert it to a string
-		String matrixSize ="7 6";
+		String matrixSize ="9 9";
 		String [] msArr = matrixSize.split(" ");
 		int x = Integer.parseInt(msArr[0]);
 		int y = Integer.parseInt(msArr[1]);
@@ -16,12 +17,15 @@ public class Main {
 		//First position
 		String firstPos = "3 3 N";
 		String [] fpArr = firstPos.split(" ");
-		int fpX = Integer.parseInt(fpArr[0]);
-		int fpY = Integer.parseInt(fpArr[1]);
+		int fpX = Integer.parseInt(fpArr[0]) - 1;
+		int fpY = Integer.parseInt(fpArr[1]) - 1;
 		
 		//Build board and robot
 		BoardBuild bb = new BoardBuild(x, y);
 		Robot rob = new Robot(fpX , fpY , fpArr[2], bb);
+		
+		//Build GUI
+		Frame gui = new Frame("testing", bb, rob);
 		
 		//movement directions
 		String movement = "LGGRGRGRGG";
@@ -31,8 +35,6 @@ public class Main {
 		for (String a : movArr){
 			switch(a.toLowerCase()) {
 				case "l":
-					rob.moveDir(a);
-					break;
 				case "r":
 					rob.moveDir(a);
 					break;
@@ -41,8 +43,13 @@ public class Main {
 					break;
 				default: 
 					System.out.println("Error: Wrong movment in main");
+					break;
 			}		
 		}
+		
+
+		
+
 		
 		//get the robots position
 		int robX = rob.getPosX();
@@ -57,5 +64,6 @@ public class Main {
 		
 	}
 
+	
 }
 	

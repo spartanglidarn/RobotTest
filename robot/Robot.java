@@ -49,7 +49,7 @@ public class Robot {
 			break;
 		default: 
 			System.out.println("Wrong direction in moveDir");
-			
+			break;
 		}
 		
 	}
