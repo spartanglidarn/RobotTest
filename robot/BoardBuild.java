@@ -1,3 +1,4 @@
+package robot;
 public class BoardBuild {
 	
 	private String xy[][];

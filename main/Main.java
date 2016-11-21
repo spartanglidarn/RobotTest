@@ -1,8 +1,12 @@
+package main;
+import gui.Frame;
+import robot.BoardBuild;
+import robot.Robot;
 
 public class Main {
 
 	public static void main(String[] args) {
-
+		Frame gui = new Frame("testing");
 		//Take in the size of the matrix from the user and convert it to a string
 		String matrixSize ="7 6";
 		String [] msArr = matrixSize.split(" ");
@@ -31,11 +35,12 @@ public class Main {
 					break;
 				case "r":
 					rob.moveDir(a);
+					break;
 				case "g":
 					rob.moveStep();
 					break;
 				default: 
-					System.out.println("Wrong movment in main");
+					System.out.println("Error: Wrong movment in main");
 			}		
 		}
 		
