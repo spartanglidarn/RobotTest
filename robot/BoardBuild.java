@@ -1,15 +1,15 @@
 package robot;
 public class BoardBuild {
 	
-	private String xy[][];
-	private int xAxis;
-	private int yAxis;
+	private static String xy[][];
+	private static int xAxis;
+	private static int yAxis;
 	
 	public BoardBuild (int x, int y) {
-		this.setXAxis(x);
-		this.setYAxis(y);
+		setXAxis(x);
+		setYAxis(y);
 		
-		this.xy = new String [x][y];
+		xy = new String [x][y];
 		
 		for (int i = 0 ; i < x ; i++) {
 			
@@ -21,23 +21,23 @@ public class BoardBuild {
 		
 	}
 	
-	public String[][] getBoard () {
-		return this.xy;
+	public static String[][] getBoard () {
+		return xy;
 	}
 	
-	public int getXAxis() {
-		return this.xAxis;
+	public static int getXAxis() {
+		return xAxis;
 	}
 	
-	public void setXAxis(int x){
-		this.xAxis = x;
+	public static void setXAxis(int x){
+		xAxis = x;
 	}
 	
-	public int getYAxis() {
-		return this.yAxis;
+	public static int getYAxis() {
+		return yAxis;
 	}
 	
-	public void setYAxis(int y) {
-		this.yAxis = y;
+	public static void setYAxis(int y) {
+		yAxis = y;
 	}
 }
