@@ -6,35 +6,6 @@ public class Robot {
 	public static enum Dir{NORTH, EAST, SOUTH, WEST};
 	private static Dir direction;
 	
-	public Robot (int posX, int posY, String dir) {
-		//Set the board for this instance of robot
-
-		System.out.println("BB X size. " + BoardBuild.getXAxis());
-		System.out.println("BB Y size. " + BoardBuild.getYAxis());
-		
-		switch(dir.toLowerCase()){
-		case "n":
-			setDirection (Dir.NORTH);
-			break;
-		case "e":
-			setDirection (Dir.EAST);
-			break;
-		case "s":
-			setDirection (Dir.SOUTH);
-			break;
-		case "w":
-			setDirection (Dir.WEST);
-			break;
-		default:
-			System.out.println("Wrong direction when creating robot");
-		}
-		
-		
-		setPosX(posX);
-		setPosY(posY);	
-	
-	}
-	
 
 	//Direction L will subtract from the direction and R will add to the Direction
 	public static void moveDir (String turn) {
@@ -56,16 +27,16 @@ public class Robot {
 	public static void turnLeft(){
 		switch(getDirection()){
 			case NORTH:
-				setDirection(Dir.WEST);
+				setDirection("w");
 				break;
 			case EAST:
-				setDirection(Dir.NORTH);
+				setDirection("n");
 				break;
 			case SOUTH:
-				setDirection(Dir.EAST);
+				setDirection("e");
 				break;
 			case WEST:
-				setDirection(Dir.SOUTH);
+				setDirection("s");
 				break;
 			default:
 				System.out.println("Error in turnLeft method, Robot class");
@@ -75,16 +46,16 @@ public class Robot {
 	public static void turnRight() {
 		switch (getDirection()){
 			case NORTH:
-				setDirection(Dir.EAST);
+				setDirection("e");
 				break;
 			case EAST:
-				setDirection(Dir.SOUTH);
+				setDirection("s");
 				break;
 			case SOUTH:
-				setDirection(Dir.WEST);
+				setDirection("w");
 				break;
 			case WEST:
-				setDirection(Dir.NORTH);
+				setDirection("n");
 				break;
 			default:
 				System.out.println("Error in turnRight method, Robot class");
@@ -150,8 +121,25 @@ public class Robot {
 		return direction;
 	}
 
-	public static void setDirection(Dir direction) {
-		Robot.direction = direction;
+	public static void setDirection(String dir) {
+		
+		switch(dir.toLowerCase()){
+		case "n":
+			Robot.direction = Dir.NORTH;
+			break;
+		case "e":
+			Robot.direction = Dir.EAST;
+			break;
+		case "s":
+			Robot.direction = Dir.SOUTH;
+			break;
+		case "w":
+			Robot.direction = Dir.WEST;
+			break;
+		default:
+			System.out.println("Wrong direction when creating robot");
+		}
+		
 	}
 
 	

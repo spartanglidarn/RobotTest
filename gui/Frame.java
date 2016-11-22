@@ -84,11 +84,6 @@ public class Frame extends JFrame implements ActionListener{
 	
 	public void actionPerformed (ActionEvent e){
 		if (e.getSource() == sendBtn){
-			textArea.append("Robot position x: "+ (Robot.getPosX()+1) +"\n");
-			textArea.append("Robot position y: " + (Robot.getPosY()+1) + "\n");
-			textArea.append("Robot direction: " + Robot.getDirection() + "\n");
-			textArea.append("------------------------------------------\n");
-			
 			//Take in the size of the matrix from the user and convert it to a string den set the matrix size
 			String userSize = tfSize.getText();
 			String [] userSizeArr = userSize.split(" ");
@@ -106,7 +101,9 @@ public class Frame extends JFrame implements ActionListener{
 			fpX -= 1;
 			fpY -= 1;
 			
-			Robot rob = new Robot(fpX , fpY , fpArr[2]);
+			Robot.setPosX(fpX);
+			Robot.setPosY(fpY);
+			Robot.setDirection(fpArr[2]);
 			//Movement
 			
 			//movement directions
@@ -134,6 +131,12 @@ public class Frame extends JFrame implements ActionListener{
 			drawMatrix();
 			this.getContentPane().validate();
 			this.getContentPane().repaint();
+			
+			textArea.append("Robot position x: "+ (Robot.getPosX()+1) +"\n");
+			textArea.append("Robot position y: " + (Robot.getPosY()+1) + "\n");
+			textArea.append("Robot direction: " + Robot.getDirection() + "\n");
+			textArea.append("------------------------------------------\n");
+			
 		}
 	}
 	
