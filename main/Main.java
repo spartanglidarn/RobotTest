@@ -10,7 +10,7 @@ public class Main {
 
 		//Build board and robot
 		BoardBuild bb = new BoardBuild(1, 1);
-		//Robot rob = new Robot(1 , 1 , "N");
+		//Set default values for Robot
 		Robot.setPosX(1);
 		Robot.setPosY(1);
 		Robot.setDirection("n");

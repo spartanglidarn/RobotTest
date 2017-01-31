@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,7 +18,7 @@ import javax.swing.JTextField;
 import robot.BoardBuild;
 import robot.Robot;
 
-public class Frame extends JFrame implements ActionListener{
+public class Frame extends JFrame implements ActionListener, KeyListener{
 	
 	//send button
 	private JButton sendBtn = new JButton("Send!");
@@ -41,7 +43,7 @@ public class Frame extends JFrame implements ActionListener{
 	
 	public Frame (String sTxt) {
 		
-		//Set frame layout, size and bg color
+		//Set frame layout, size and BG color
 		setLayout (new GridLayout(2,1));
 		setSize(200, 200);
 		getContentPane().setBackground(Color.lightGray);
@@ -158,6 +160,24 @@ public class Frame extends JFrame implements ActionListener{
 			}
 			
 		}
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 	
