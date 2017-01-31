@@ -14,4 +14,6 @@ First position: Detta fält berättar för programmet vart på spelplanen spelar
 Exempeldata: 1 2 N  
 Walk: Detta fält berättar för spelaren hur den ska röra sig genom att antingen säga att den ska byta position eller gå ett steg. För att byta position så skriver användaren R eller L för att svänga höger eller vänster. För att gå ett steg skriver användaren G. Detta skrivs i en textsträng utan mellanslag.  
 Exempeldata: RRGLGGRRGGLLGGG  
- 
+
+Exempel bild:  
+  [[https://github.com/spartanglidarn/RobotTest/blob/master/README.PNG|alt=readmePic]]  
