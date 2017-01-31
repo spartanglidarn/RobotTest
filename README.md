@@ -16,4 +16,4 @@ Walk: Detta fält berättar för spelaren hur den ska röra sig genom att anting
 Exempeldata: RRGLGGRRGGLLGGG  
 
 Exempel bild:  
-  [[https://github.com/spartanglidarn/RobotTest/blob/master/README.PNG|alt=readmePic]]  
+  [[https://github.com/spartanglidarn/RobotTest/blob/master/README.PNG]]  
